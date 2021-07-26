@@ -8,7 +8,6 @@ import { Question } from './question';
   providedIn: 'root'
 })
 export class MostLikelyQsService {
-  private questionsUrl: string = 'http://najbardziejprawdopodobny.pl/api/';
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
