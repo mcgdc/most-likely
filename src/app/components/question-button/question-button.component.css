@@ -3,7 +3,7 @@
     margin: 0cm;
     background-color: transparent;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: xx-large;
+    cursor: pointer;
 }
 
 .q-div {
@@ -11,6 +11,21 @@
     background-color: orange;
     height: auto;
     padding: 1em;
+    transition: all .2s ease-in-out;
+    border-radius: 1em;
+    cursor: pointer;
+}
+
+.q-div:active {
+    box-shadow: 1px 1px;
+    background-color: orangered;
+    /*nie dzialaaaaaaaaaaaaaaa*/
+    transform: translateY(5px);
+    /*nie dzialaaaaaaaaaaaaaaa*/
+}
+
+.q-div:hover {
+    transform: scale(1.1);
 }
 
 .stupido-div {
@@ -23,6 +38,55 @@
 .grid-container {
     height: 100%;
     display: grid;
-    grid-template-columns: 33% 33% 34%;
-    grid-template-rows: 33% 33% 34%;
+    grid-template-columns: 33% 34% 33%;
+    grid-template-rows: 33% 34% 33%;
+    animation: myanimation 10s infinite;
+}
+
+@keyframes myanimation {
+    0% {
+        background-color: red;
+    }
+    25% {
+        background-color: yellow;
+    }
+    50% {
+        background-color: green;
+    }
+    75% {
+        background-color: brown;
+    }
+    100% {
+        background-color: red;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .q-button {
+        font-size: small;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .q-button {
+        font-size: medium;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .q-button {
+        font-size: large;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .q-button {
+        font-size: x-large;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .q-button {
+        font-size: xx-large;
+    }
 }
