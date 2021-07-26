@@ -3,6 +3,7 @@
     margin: 0cm;
     background-color: transparent;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
 }
 
 .q-div {
@@ -10,6 +11,21 @@
     background-color: orange;
     height: auto;
     padding: 1em;
+    transition: all .2s ease-in-out;
+    border-radius: 1em;
+    cursor: pointer;
+}
+
+.q-div:active {
+    box-shadow: 1px 1px;
+    background-color: orangered;
+    /*nie dzialaaaaaaaaaaaaaaa*/
+    transform: translateY(5px);
+    /*nie dzialaaaaaaaaaaaaaaa*/
+}
+
+.q-div:hover {
+    transform: scale(1.1);
 }
 
 .stupido-div {
