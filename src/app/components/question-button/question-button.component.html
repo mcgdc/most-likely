@@ -1,7 +1,9 @@
 <div class="grid-container">
     <div class="stupido-div">
         <div class="q-div" *ngIf="currentQuestion">
-            <button class="q-button" (click)="fetchNextQuestion()">{{currentQuestion.Content}}</button>
+            <button class="q-button" (click)="fetchNextQuestion()">
+                {{currentQuestion.Content}}
+            </button>
         </div>
     </div>
 </div>
