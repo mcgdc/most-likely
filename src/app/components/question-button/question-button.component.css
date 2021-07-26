@@ -24,6 +24,25 @@
     display: grid;
     grid-template-columns: 33% 34% 33%;
     grid-template-rows: 33% 34% 33%;
+    animation: myanimation 10s infinite;
+}
+
+@keyframes myanimation {
+    0% {
+        background-color: red;
+    }
+    25% {
+        background-color: yellow;
+    }
+    50% {
+        background-color: green;
+    }
+    75% {
+        background-color: brown;
+    }
+    100% {
+        background-color: red;
+    }
 }
 
 @media only screen and (max-width: 600px) {
