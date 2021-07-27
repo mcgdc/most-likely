@@ -32,6 +32,6 @@ export class QuestionButtonComponent implements OnInit {
     document.body.style.backgroundColor = `${bckg}`;
 
     const shadowdiv = document.getElementById('shadow-div');
-    if (shadowdiv) shadowdiv.style.boxShadow = `7px 7px ${shdw}`;
+    if (shadowdiv) shadowdiv.style.boxShadow = `7px 12px ${shdw}`;
   }
 }
