@@ -19,6 +19,19 @@ export class QuestionButtonComponent implements OnInit {
 
   fetchNextQuestion(): void{
     this.mostLikelyQsService.getRandomQuestion()
-    .subscribe(q => this.currentQuestion = q);
+      .subscribe(q => this.currentQuestion = q);
+    
+      var x = Math.floor(Math.random() * 256);
+      var y = Math.floor(Math.random() * 100);
+      var z = Math.floor(Math.random() * 80);
+      
+      var bckg = "hsl(" + x + "," + y + "% ," + (z + 20) + "%)";
+      var shdw = "hsl(" + x + "," + y + "% ," + z + "%)";
+
+    
+    document.body.style.backgroundColor = `${bckg}`;
+
+    const shadowdiv = document.getElementById('shadow-div');
+    if (shadowdiv) shadowdiv.style.boxShadow = `7px 7px ${shdw}`;
   }
 }

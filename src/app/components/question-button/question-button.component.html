@@ -1,9 +1,10 @@
 <div class="grid-container">
     <div class="stupido-div">
-        <div class="q-div" *ngIf="currentQuestion">
+        <div class="q-div" id="shadow-div" *ngIf="currentQuestion">
             <button class="q-button" (click)="fetchNextQuestion()">
                 {{currentQuestion.Content}}
             </button>
+            <div style="height: 5px; background-color: lightgray;"></div>
         </div>
     </div>
 </div>
