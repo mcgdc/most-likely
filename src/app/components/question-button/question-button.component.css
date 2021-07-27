@@ -40,7 +40,10 @@
 @media only screen and (max-width: 600px) {
     .q-button {
         font-size: medium;
-        color: aqua;
+    }
+    .stupido-div {
+        width: 450px;
+        height: 150px;
     }
 }
 
