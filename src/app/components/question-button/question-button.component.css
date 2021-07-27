@@ -28,6 +28,7 @@
 .stupido-div {
     display: flex;
     align-items: center;
+    width: 70%;
 }
 
 .grid-container {
@@ -39,11 +40,11 @@
 
 @media only screen and (max-width: 600px) {
     .q-button {
-        font-size: medium;
+        font-size: large;
     }
     .stupido-div {
-        width: 250px;
-        height: 450px;
+        height: 250px;
+        width: 60%;
     }
 }
 
@@ -52,8 +53,8 @@
         font-size: large;
     }
     .stupido-div {
-        width: 490px;
-        height: 150px;
+        height: 250px;
+        width: 60%;
     }
 }
 
@@ -62,7 +63,6 @@
         font-size: large;
     }
     .stupido-div {
-        width: 580px;
         height: 140px;
     }
 }
@@ -72,7 +72,6 @@
         font-size: x-large;
     }
     .stupido-div {
-        width: 750px;
         height: 170px;
     }
 }
@@ -82,7 +81,6 @@
         font-size: xx-large;
     }
     .stupido-div {
-        width: 900px;
         height: 200px;
     }
 }
@@ -92,7 +90,6 @@
         font-size: xx-large;
     }
     .stupido-div {
-        width: 1000px;
         height: 200px;
     }
 }
@@ -102,7 +99,6 @@
         font-size: xx-large;
     }
     .stupido-div {
-        width: 1200px;
-        height: 250px;
+        height: 200px;
     }
 }
