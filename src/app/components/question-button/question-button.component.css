@@ -31,15 +31,13 @@
 .stupido-div {
     display: flex;
     align-items: center;
-    grid-column-start: 2;
-    grid-row-start: 2;
 }
 
 .grid-container {
     height: 100%;
-    display: grid;
-    grid-template-columns: 33% auto 33%;
-    grid-template-rows: 33% 34% 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media only screen and (max-width: 600px) {
