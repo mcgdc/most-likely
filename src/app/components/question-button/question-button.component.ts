@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MostLikelyQsService } from 'src/app/most-likely-qs.service';
 import { Question } from 'src/app/question';
+import { shuffle } from 'src/app/shuffle';
 
 
 @Component({
@@ -10,28 +11,37 @@ import { Question } from 'src/app/question';
 })
 export class QuestionButtonComponent implements OnInit {
   currentQuestion?: Question;
+  private questionIDs: Array<number> = new Array<number>();
 
   constructor(private mostLikelyQsService: MostLikelyQsService) { }
 
   ngOnInit(): void {
-    this.fetchNextQuestion();
+    this.mostLikelyQsService.getQuestionsAmount()
+      .subscribe(n => {
+        this.questionIDs = Array.from({length: n}, (_, i) => i + 1);
+        shuffle(this.questionIDs);
+        this.fetchNextQuestion();
+      });
   }
 
-  fetchNextQuestion(): void{
-    this.mostLikelyQsService.getRandomQuestion()
+  fetchNextQuestion(): void {
+    const res = this.questionIDs.pop();
+    if (res === undefined) {
+      this.currentQuestion = {'Content': 'No questions left.'};
+      return;
+    }
+    this.mostLikelyQsService.getQuestionById(res)
       .subscribe(q => this.currentQuestion = q);
-    
-      var x = Math.floor(Math.random() * 256);
-      var y = Math.floor(Math.random() * 100);
-      var z = Math.floor(Math.random() * 80);
-      
-      var bckg = "hsl(" + x + "," + y + "% ," + (z + 20) + "%)";
-      var shdw = "hsl(" + x + "," + y + "% ," + z + "%)";
 
-    
+    const x = Math.floor(Math.random() * 360);
+    const y = Math.floor(Math.random() * 100);
+    const z = Math.floor(Math.random() * 80);
+
+    const bckg = `hsl(${x}, ${y}%, ${z + 20}%)`;
+    const shdw = `hsl(${x}, ${y}%, ${z}%)`;
+
     document.body.style.backgroundColor = `${bckg}`;
-
-    const shadowdiv = document.getElementById('shadow-div');
-    if (shadowdiv) shadowdiv.style.boxShadow = `7px 12px ${shdw}`;
+    const shadowDiv = document.getElementById('shadow-div');
+    if (shadowDiv) shadowDiv.style.boxShadow = `7px 12px ${shdw}`;
   }
 }
