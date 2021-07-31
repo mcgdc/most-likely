@@ -16,5 +16,13 @@ export class MostLikelyQsService {
     return this.http.get<Question>('http://najbardziejprawdopodobny.pl/api/question/random/');
   }
 
+  getQuestionById(id: number): Observable<Question>{
+    return this.http.get<Question>(`http://najbardziejprawdopodobny.pl/api/question/${id}/`);
+  }
+
+  getQuestionsAmount(): Observable<number> {
+    return this.http.get<number>('http://najbardziejprawdopodobny.pl/api/question/amount/');
+  }
+
   constructor(private http: HttpClient) { }
 }
